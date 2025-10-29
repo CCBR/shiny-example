@@ -2,7 +2,6 @@ library(shiny)
 library(bslib)
 
 # Load the plot scripts
-source("R/PCA_plot_DSP.R")
 source("R/violin_boxplot.R")
 
 # Load the input data
@@ -48,8 +47,6 @@ ui <- page_sidebar(
   
   # Tabs in the app
   navset_card_underline(
-    nav_panel("PCA", 
-              plotOutput("PCA_plot")), 
     nav_panel("Boxplot", 
               plotOutput("Boxplot")))
   
@@ -83,15 +80,6 @@ server <- function(input, output, session) {
   })
   
   summary_stats <- reactive({input$summary_stats})
-  
-  output$PCA_plot <- renderPlot({
-    
-    PCA_plot_DSP(counts = counts.data, 
-             annotation.df = annotation.data, 
-             annotation.field = input$annotation)
-    
-    
-  })
   
   output$Boxplot <- renderPlot({
     
