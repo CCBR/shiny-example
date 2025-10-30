@@ -4,6 +4,8 @@ library(bslib)
 # Load the plot scripts
 source("R/violin_boxplot.R")
 
+# To ignore PCA packages run `renv::settings$ignored.packages(c("beachmat", "BiocSingular", "PCAtools"))`
+
 # Load the input data
 tutorial.folder <- getwd()
 data.folder <- paste0(tutorial.folder, "/test_datasets/Human_Kidney_DSP/")
