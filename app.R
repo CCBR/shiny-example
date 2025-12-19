@@ -31,17 +31,17 @@ ui <- page_sidebar(
   sidebar = sidebar(
     
     selectizeInput("annotation", 
-                   "Annotation to display", 
+                   "Annotation to Display", 
                    choices = NULL, 
                    multiple = FALSE), 
     
     selectizeInput("gene", 
-                   "Gene to display", 
+                   "Gene to Display (Boxplot Only)", 
                    choices = NULL, 
                    multiple = FALSE), 
     
     checkboxInput("summary_stats", 
-                  "Display Summary Stats", 
+                  "Display Summary Stats (Boxplot Only)", 
                   value = FALSE)
     
   ),
